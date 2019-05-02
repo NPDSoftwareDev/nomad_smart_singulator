@@ -262,8 +262,9 @@ POST:
 // shouldRun returns true if the alloc is in a state that the alloc runner
 // should run it.
 func (ar *allocRunner) shouldRun() bool {
+	alloc := ar.Alloc()
 	// Do not run allocs that are terminal
-	if ar.Alloc().TerminalStatus() {
+	if alloc.TerminalStatus() {
 		ar.logger.Trace("alloc terminal; not running",
 			"desired_status", ar.Alloc().DesiredStatus,
 			"client_status", ar.Alloc().ClientStatus,
