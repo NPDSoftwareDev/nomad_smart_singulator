@@ -12,8 +12,9 @@ WORKDIR /go/src/github.com/hashicorp/nomad
 RUN go get -u github.com/golang/protobuf/protoc-gen-go && \
 make bootstrap
 
-RUN make prerelease; exit 0 && \
-make prerelease && \
+RUN make prerelease; exit 0
+
+RUN make prerelease && \
 make release 
 
 WORKDIR /go/src/github.com/hashicorp/nomad/pkg
