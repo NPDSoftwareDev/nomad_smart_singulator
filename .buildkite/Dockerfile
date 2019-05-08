@@ -2,11 +2,12 @@ FROM golang:1.12.5-stretch
 ARG JFROG_UNAME
 ARG JFROG_PWORD
 
-ENV GOPATH=/Source
+ENV GOPATH=/Source \
+PATH=$PATH:$GOPATH/bin
 
 RUN mkdir -p /Source/src/github.com/hashicorp/nomad && \
 apt-get update && \
-apt-get install build-essential
+apt-get install -y build-essential
 
 COPY . /Source/src/github.com/hashicorp/nomad
 
