@@ -4,7 +4,7 @@ ARG JFROG_PWORD
 
 RUN mkdir -p /go/src/github.com/hashicorp/nomad && \
 apt-get update && \
-apt-get install -y build-essential
+apt-get install -y build-essential protobuf-compiler
 
 COPY . /go/src/github.com/hashicorp/nomad
 
