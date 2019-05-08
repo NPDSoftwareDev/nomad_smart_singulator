@@ -2,8 +2,9 @@ FROM golang:1.12.5-stretch
 ARG JFROG_UNAME
 ARG JFROG_PWORD
 
-ENV GOPATH=/Source \
-PATH=$PATH:$GOPATH/bin
+ENV GOROOT=/go \
+GOPATH=/Source \
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 RUN mkdir -p /Source/src/github.com/hashicorp/nomad && \
 apt-get update && \
