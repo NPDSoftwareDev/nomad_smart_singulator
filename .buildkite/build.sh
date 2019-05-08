@@ -14,4 +14,4 @@ while getopts ":n:s:b:t:" opt; do
   esac
 done
 
-docker build -t npdsoftwaredev/nomad_offline:${SHA1} --network=cluster_network --build-arg JFROG_UNAME=${JFROG_UNAME} --build-arg JFROG_PWORD=${JFROG_PWORD} .
+docker build -t npdsoftwaredev/nomad_offline:${SHA1} --network=cluster_network --build-arg JFROG_UNAME=${JFROG_UNAME} --build-arg JFROG_PWORD=${JFROG_PWORD} -f .buildkite/Dockerfile
