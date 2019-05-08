@@ -280,6 +280,7 @@ WAIT:
 			joinedSet := make(map[string]struct{})
 			for _, event := range events {
 				missing := event.MissingDeps
+
 				if missing == nil {
 					continue
 				}
@@ -287,6 +288,18 @@ WAIT:
 				for _, dep := range missing.List() {
 					joinedSet[dep.String()] = struct{}{}
 				}
+			}
+
+			if len(events) == len(tm.lookup) {
+				for _, event := range events {
+					_, err := os.Stat(*(event.TemplateConfigs[0].Destination))
+					// This template hasn't been rendered
+					if event.LastWouldRender.IsZero() || err != nil {
+						continue
+					}
+				}
+
+				break WAIT
 			}
 
 			// Check to see if the new joined set is the same as the old
