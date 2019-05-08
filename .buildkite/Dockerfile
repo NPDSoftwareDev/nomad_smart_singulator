@@ -9,7 +9,9 @@ apt-get install -y build-essential
 COPY . /go/src/github.com/hashicorp/nomad
 
 WORKDIR /go/src/github.com/hashicorp/nomad
-RUN make bootstrap && \
+RUN go get -u github.com/golang/protobuf/{proto,protoc-gen-go} && \
+make bootstrap && \
+make prerelease; exit 0 && \
 make prerelease && \
 make release 
 
