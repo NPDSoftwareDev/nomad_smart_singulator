@@ -34,9 +34,7 @@ gcc-arm-linux-gnueabihf \
 g++-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabi \
 g++-arm-linux-gnueabi \
-build-essential \
-
-
+build-essential
 
 RUN make prerelease; exit 0
 
