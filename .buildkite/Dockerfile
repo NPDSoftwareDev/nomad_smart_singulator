@@ -6,7 +6,7 @@ ENV PROTOC_ZIP=protoc-3.7.1-linux-x86_64.zip
 
 RUN mkdir -p /go/src/github.com/hashicorp/nomad && \
 apt-get update && \
-apt-get install -y build-essential curl unzip gcc g++ software-properties-common&& \
+apt-get install -y build-essential curl unzip gcc g++ software-properties-common libc6-dev-i386 && \
 curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 apt-get install -y nodejs npm && \
 npm install -g --unsafe-perm ember-cli yarn node-sass node-gyp
