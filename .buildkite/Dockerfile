@@ -21,25 +21,33 @@ curl -OL https://github.com/google/protobuf/releases/download/v3.7.1/$PROTOC_ZIP
 unzip -o $PROTOC_ZIP -d protoc3 && \
 mv protoc3/bin/* /usr/local/bin/ && \
 mv protoc3/include/* /usr/local/include/ && \
-rm -f $PROTOC_ZIP && \
-apt-get install -y gcc \
+rm -f $PROTOC_ZIP
+
+#Install build utilities
+RUN apt-get install -y gcc \
 g++ \
 software-properties-common \
-linux-libc-dev \
-libc6-dev-i386 \
-libc6-armel-cross \ 
-libc6-dev-armel-cross \
-binutils-arm-linux-gnueabi \
-libncurses5-dev \
-gcc-6-arm-linux-gnueabihf \
-g++-6-arm-linux-gnueabihf \
-gcc-6-arm-linux-gnueabi \
-g++-6-arm-linux-gnueabi \
-gcc-arm-linux-gnueabihf \
-g++-arm-linux-gnueabihf \
-gcc-arm-linux-gnueabi \
-g++-arm-linux-gnueabi \
 build-essential 
+
+#Install i386 dependencies
+RUN dpkg --add-architecture i386 && \
+apt-get install -y libc6-dev-i386 \
+libpcre3-dev \
+linux-libc-dev:i386 \
+pkg-config 
+
+# Install ARM build utilities
+RUN apt-get install -y \
+binutils-aarch64-linux-gnu \
+binutils-arm-linux-gnueabihf \
+gcc-5-aarch64-linux-gnu \
+gcc-5-arm-linux-gnueabihf \
+gcc-5-multilib-arm-linux-gnueabihf
+
+# Install Windows build utilities
+RUN apt-get install -y \
+binutils-mingw-w64 \
+gcc-mingw-w64
 
 RUN make prerelease; exit 0
 
