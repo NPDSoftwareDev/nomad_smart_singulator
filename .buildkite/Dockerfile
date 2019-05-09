@@ -23,7 +23,7 @@ mv protoc3/bin/* /usr/local/bin/ && \
 mv protoc3/include/* /usr/local/include/ && \
 rm -f $PROTOC_ZIP
 
-RUN cd ui && yarn install node-sass && yarn
+RUN cd ui && yarn add node-sass && yarn
 RUN make prerelease; exit 0
 
 RUN make prerelease && \
