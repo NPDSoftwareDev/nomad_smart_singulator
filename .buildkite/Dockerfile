@@ -6,7 +6,7 @@ ENV PROTOC_ZIP=protoc-3.7.1-linux-x86_64.zip
 
 RUN mkdir -p /go/src/github.com/hashicorp/nomad && \
 apt-get update && \
-apt-get install -y build-essential curl
+apt-get install -y build-essential curl unzip
 
 COPY . /go/src/github.com/hashicorp/nomad
 
