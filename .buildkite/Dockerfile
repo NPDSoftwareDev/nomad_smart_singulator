@@ -15,7 +15,9 @@ RUN go get -u github.com/golang/protobuf/protoc-gen-go && \
 go get -u github.com/golang/protobuf/proto && \
 make bootstrap && \
 curl -OL https://github.com/google/protobuf/releases/download/v3.7.1/$PROTOC_ZIP && \
-unzip -o $PROTOC_ZIP -d /usr/local bin/protoc && \
+unzip -o $PROTOC_ZIP -d protoc3 && \
+mv protoc3/bin/* /usr/local/bin/ && \
+mv protoc3/include/* /usr/local/include/ && \
 rm -f $PROTOC_ZIP
 
 RUN make prerelease; exit 0
