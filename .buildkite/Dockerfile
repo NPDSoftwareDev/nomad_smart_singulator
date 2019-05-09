@@ -25,6 +25,7 @@ rm -f $PROTOC_ZIP && \
 apt-get install -y gcc \
 g++ \
 software-properties-common \
+linux-libc-dev \
 libc6-dev-i386 \
 libc6-armel-cross \ 
 libc6-dev-armel-cross \
@@ -38,7 +39,7 @@ gcc-arm-linux-gnueabihf \
 g++-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabi \
 g++-arm-linux-gnueabi \
-build-essential
+build-essential 
 
 RUN make prerelease; exit 0
 
