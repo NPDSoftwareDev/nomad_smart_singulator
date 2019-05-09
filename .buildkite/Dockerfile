@@ -30,6 +30,10 @@ libc6-armel-cross \
 libc6-dev-armel-cross \
 binutils-arm-linux-gnueabi \
 libncurses5-dev \
+gcc-6-arm-linux-gnueabihf \
+g++-6-arm-linux-gnueabihf \
+gcc-6-arm-linux-gnueabi \
+g++-6-arm-linux-gnueabi \
 gcc-arm-linux-gnueabihf \
 g++-arm-linux-gnueabihf \
 gcc-arm-linux-gnueabi \
