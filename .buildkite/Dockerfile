@@ -27,13 +27,14 @@ rm -f $PROTOC_ZIP
 RUN apt-get install -y gcc \
 g++ \
 software-properties-common \
-build-essential 
+build-essential \
+libc6-dev
 
 #Install i386 dependencies
 RUN dpkg --add-architecture i386 && \
 apt-get install -y libc6-dev-i386 \
 libpcre3-dev \
-linux-libc-dev:i386 \
+libc6-dev-i386\
 pkg-config 
 
 # Install ARM build utilities
