@@ -34,7 +34,7 @@ libc6-dev
 RUN dpkg --add-architecture i386 && \
 apt-get install -y libc6-dev-i386 \
 libpcre3-dev \
-libc6-dev-i386\
+libc6-dev-i386 \
 pkg-config 
 
 # Install ARM build utilities
