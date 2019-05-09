@@ -9,7 +9,7 @@ apt-get update && \
 apt-get install -y build-essential curl unzip software-properties-common&& \
 curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
 apt-get install -y nodejs npm && \
-npm install -g ember-cli yarn node-sass
+npm install -g --unsafe-perm ember-cli yarn node-sass
 
 COPY . /go/src/github.com/hashicorp/nomad
 
