@@ -8,8 +8,8 @@ RUN mkdir -p /go/src/github.com/hashicorp/nomad && \
 apt-get update && \
 apt-get install -y build-essential curl unzip software-properties-common&& \
 curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-apt-get install -y nodejs npm yarn && \
-npm install -g ember-cli
+apt-get install -y nodejs npm && \
+npm install -g ember-cli yarn
 
 COPY . /go/src/github.com/hashicorp/nomad
 
