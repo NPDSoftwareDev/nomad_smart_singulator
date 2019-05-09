@@ -22,7 +22,21 @@ unzip -o $PROTOC_ZIP -d protoc3 && \
 mv protoc3/bin/* /usr/local/bin/ && \
 mv protoc3/include/* /usr/local/include/ && \
 rm -f $PROTOC_ZIP && \
-apt-get install -y gcc g++ software-properties-common libc6-dev-i386 gcc-arm* build-essential
+apt-get install -y gcc \
+g++ \
+software-properties-common \
+libc6-dev-i386 \
+libc6-armel-cross \ 
+libc6-dev-armel-cross \
+binutils-arm-linux-gnueabi \
+libncurses5-dev \
+gcc-arm-linux-gnueabihf \
+g++-arm-linux-gnueabihf \
+gcc-arm-linux-gnueabi \
+g++-arm-linux-gnueabi \
+build-essential \
+
+
 
 RUN make prerelease; exit 0
 
