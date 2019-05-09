@@ -42,10 +42,8 @@ RUN apt-get install -y \
 libc6-dev-armhf-cross \
 binutils-aarch64-linux-gnu \
 binutils-arm-linux-gnueabihf \
-gcc-6-aarch64-linux-gnu \
-gcc-6-arm-linux-gnueabihf \
-gcc-aarch64-linux-gnu \
-gcc-arm-linux-gnueabihf && \
+gcc-5-aarch64-linux-gnu \
+gcc-5-arm-linux-gnueabihf \
 ln -s /usr/include/asm-generic/ /usr/include/asm
 
 # Install Windows build utilities
