@@ -4,12 +4,13 @@ ARG JFROG_PWORD
 
 RUN mkdir -p /go/src/github.com/hashicorp/nomad && \
 apt-get update && \
-apt-get install -y build-essential protobuf-compiler
+apt-get install -y build-essential
 
 COPY . /go/src/github.com/hashicorp/nomad
 
 WORKDIR /go/src/github.com/hashicorp/nomad
 RUN go get -u github.com/golang/protobuf/protoc-gen-go && \
+RUN go get -u github.com/golang/protobuf/proto && \
 make bootstrap
 
 RUN make prerelease; exit 0
