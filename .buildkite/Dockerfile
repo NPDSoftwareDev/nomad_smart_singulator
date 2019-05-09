@@ -41,9 +41,9 @@ pkg-config
 RUN apt-get install -y \
 binutils-aarch64-linux-gnu \
 binutils-arm-linux-gnueabihf \
-gcc-*-aarch64-linux-gnu \
-gcc-*-arm-linux-gnueabihf \
-gcc-*-multilib-arm-linux-gnueabihf
+gcc-aarch64-linux-gnu \
+gcc-arm-linux-gnueabihf \
+gcc-multilib-arm-linux-gnueabihf
 
 # Install Windows build utilities
 RUN apt-get install -y \
