@@ -45,8 +45,7 @@ binutils-arm-linux-gnueabihf \
 gcc-6-aarch64-linux-gnu \
 gcc-6-arm-linux-gnueabihf \
 gcc-aarch64-linux-gnu \
-gcc-arm-linux-gnueabihf \
-gcc-multilib
+gcc-arm-linux-gnueabihf
 
 # Install Windows build utilities
 RUN apt-get install -y \
