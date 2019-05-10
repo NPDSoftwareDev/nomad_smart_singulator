@@ -56,7 +56,7 @@ gcc-mingw-w64
 RUN make prerelease; exit 0
 
 RUN make prerelease && \
-make release 
+make release; exit 0 
 
 WORKDIR /go/src/github.com/hashicorp/nomad/pkg
 
