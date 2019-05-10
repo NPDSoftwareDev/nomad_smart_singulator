@@ -60,9 +60,9 @@ make release; exit 0
 
 WORKDIR /go/src/github.com/hashicorp/nomad/pkg
 
-RUN curl -u JFROG_UNAME:JFROG_PWORD -T  linux_386.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_386.zip' && \
-curl -u JFROG_UNAME:JFROG_PWORD -T  linux_amd64.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_amd64.zip' && \
-curl -u JFROG_UNAME:JFROG_PWORD -T  linux_arm.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_arm.zip' && \
-curl -u JFROG_UNAME:JFROG_PWORD -T  linux_arm64.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_arm64.zip' && \
-curl -u JFROG_UNAME:JFROG_PWORD -T  windows_386.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/windows_386.zip' && \
-curl -u JFROG_UNAME:JFROG_PWORD -T  windows_amd64.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/windows_amd64.zip'
+RUN curl -u ${JFROG_UNAME}:${JFROG_PWORD} -T  linux_386.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_386.zip' && \
+curl -u ${JFROG_UNAME}:${JFROG_PWORD} -T  linux_amd64.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_amd64.zip' && \
+curl -u ${JFROG_UNAME}:${JFROG_PWORD} -T  linux_arm.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_arm.zip' && \
+curl -u ${JFROG_UNAME}:${JFROG_PWORD} -T  linux_arm64.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/linux_arm64.zip' && \
+curl -u ${JFROG_UNAME}:${JFROG_PWORD} -T  windows_386.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/windows_386.zip' && \
+curl -u ${JFROG_UNAME}:${JFROG_PWORD} -T  windows_amd64.zip 'http://usdl-artifactory.dxcluster.prod.laitram.loc/artifactory/nomad_releases/offline/v0.9.1/windows_amd64.zip'
