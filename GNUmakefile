@@ -85,7 +85,7 @@ pkg/linux_amd64/nomad: $(SOURCE_FILES) ## Build Nomad for linux/amd64
 
 pkg/linux_arm/nomad: $(SOURCE_FILES) ## Build Nomad for linux/arm
 	@echo "==> Building $@ with tags $(GO_TAGS)..."
-	@CGO_ENABLED=1 GOOS=linux GOARCH=arm CC=arm-linux-gnueabihf-gcc-5 \
+	@CGO_ENABLED=1 GOOS=linux GOARCH=arm CC=arm-linux-gnueabihf-gcc-6 \
 		go build \
 		-ldflags $(GO_LDFLAGS) \
 		-tags "$(GO_TAGS)" \
@@ -93,7 +93,7 @@ pkg/linux_arm/nomad: $(SOURCE_FILES) ## Build Nomad for linux/arm
 
 pkg/linux_arm64/nomad: $(SOURCE_FILES) ## Build Nomad for linux/arm64
 	@echo "==> Building $@ with tags $(GO_TAGS)..."
-	@CGO_ENABLED=1 GOOS=linux GOARCH=arm64 CC=aarch64-linux-gnu-gcc-5 \
+	@CGO_ENABLED=1 GOOS=linux GOARCH=arm64 CC=aarch64-linux-gnu-gcc-6 \
 		go build \
 		-ldflags $(GO_LDFLAGS) \
 		-tags "$(GO_TAGS)" \
