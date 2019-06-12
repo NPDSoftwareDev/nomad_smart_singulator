@@ -292,11 +292,13 @@ WAIT:
 
 			if len(events) == len(tm.lookup) {
 				for _, event := range events {
+					fmt.Sprintf("Check template: %s", event.TemplateConfigs[0].Destination)
 					_, err := os.Stat(*(event.TemplateConfigs[0].Destination))
 					// This template hasn't been rendered
 					if event.LastWouldRender.IsZero() || err != nil {
 						continue
 					}
+					fmt.Sprintf("Template: %s exists.", event.TemplateConfigs[0].Destination)
 				}
 
 				break WAIT
